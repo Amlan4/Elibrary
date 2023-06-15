@@ -1,0 +1,109 @@
+﻿@model Elibrary3.Models.ELVM
+@{
+    ViewData["Title"] = "Index";
+}
+@*<h2>Register</h2>*@
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: lightcyan;
+        }
+
+        .container {
+            padding: 50px;
+            background-color: lightblue;
+            text-align:justify;
+        }
+
+        input[type=text], input[type=password], textarea {
+            width: 40%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+         
+        }
+
+       input[type=text]:focus, input[type=password]:focus {
+                background-color: orange;
+                outline: none;
+        }
+
+        div {
+            padding: 10px 0;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        .registerbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 10%;
+            opacity: 0.9;
+        }
+
+            .registerbtn:hover {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body>
+ 
+        <form asp-controller="Register" asp-action="save" >
+            <div class="form_wrap form_grp">
+                <center>  <h1> Student Registeration Form</h1> </center>
+                <hr>
+
+                <label>
+                    ID Number
+                </label>
+                <input type="text" placeholder="ID Number" size="8" asp-for=" ELStudentMstsObj.IdNo" required /><br />
+
+                <label>Name</label>
+                <input type="text"  placeholder="name" size="15" asp-for=" ELStudentMstsObj.Name" required /><br />
+
+                @*<div>
+            <label>
+                Course :
+            </label>
+            <input type="text" course="course" placeholder="course" size="15" required /><br />
+        </div>*@
+
+                <label>
+                    Phone :
+                </label>
+                <input type="text"  placeholder="phone no." size="10" required asp-for=" ELStudentMstsObj.Phone" /><br />
+
+                @*<level>
+         <b>Current Address:</b>
+        </level><br />
+        <textarea cols="80" rows="3" placeholder="Current Address" value="address"  required> </textarea><br />*@
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email"  size="25" asp-for=" ELStudentMstsObj.Email" required><br />
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password"  size="8" asp-for=" ELStudentMstsObj.Password" required><br />
+
+                <label>
+                   ROLE ID
+                </label>
+                <input type="text" placeholder="" size="1" asp-for=" ELStudentMstsObj.RoleId" required /><br />
+
+                <button type="submit" class="registerbtn">Register</button><br />
+
+            </div>
+
+        </form>
+
+</body>
